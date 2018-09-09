@@ -1,0 +1,17 @@
+[package]
+name = "next_os"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bootloader = "0.9.8"
+
+[package.metadata.bootimage]
+build-command = ["xbuild"]
+run-command = ["qemu-system-x86_64", "-drive", "format=raw,file={}"]
+run-args = []
+test-args = []
+test-timeout = 300
+test-no-reboot = true
