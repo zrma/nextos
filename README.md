@@ -3,14 +3,11 @@
 ## Setup
 
 ```bash
-rustup override add nightly
-cargo install cargo-xbuild
-rustup component add rust-src
-rustup component add llvm-tools-preview
+rustup toolchain install nightly --component rust-src
 ```
 
 ## Build
 
 ```bash
-xargo bootimage
+cargo +nightly build -Zjson-target-spec
 ```

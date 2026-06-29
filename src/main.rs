@@ -1,11 +1,10 @@
 #![no_main]
-#![feature(lang_items)]
 #![no_std]
 
 use core::panic::PanicInfo;
 
 #[no_mangle]
-pub extern fn _start() {
+pub extern "C" fn _start() {
     let hello = b"Hello World!";
     let color_byte = 0x1f; // white foreground, blue background
 
